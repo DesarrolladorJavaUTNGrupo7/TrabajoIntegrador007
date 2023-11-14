@@ -22,3 +22,5 @@ El sistema debe permitir el alta de incidentes que contengan un conjunto de prob
 Cada tipo de problema particular puede ser solucionado por una o varias
 especialidades
 ???
+
+ver de aplicar el patron de diseño de estado en tipo de problema
