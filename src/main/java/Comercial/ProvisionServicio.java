@@ -15,20 +15,20 @@ import static javax.persistence.GenerationType.SEQUENCE;
 public class ProvisionServicio {
 
     @Id
-    @Column(name="idProvisionServicio")
+    @Column(name="id_provision_servicio")
     @GeneratedValue(strategy=SEQUENCE, generator="ID_SEQ")
     private Integer id;
 
-    @Column(name="Cliente_idCliente") //controlar asociacion con tabla cliente TODO
+    @Column(name="Cliente_id_cliente") //controlar asociacion con tabla cliente TODO
     private Cliente cliente;
 
-    @Column(name="Servicio_idServicio") //controlar asociacion con tabla servicio TODO
+    @Column(name="Servicio_id_servicio") //controlar asociacion con tabla servicio TODO
     private Servicio servicio;
 
-    @Column(name="fechaDeContrato")
+    @Column(name="fecha_de_contrato")
     private Date fechaDeContrato;
 
-    @Column(name="fechaDeVencimiento")
+    @Column(name="fecha_de_vencimiento")
     private Date fechaDeVencimiento;
 
     public ProvisionServicio() {
