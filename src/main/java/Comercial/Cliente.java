@@ -14,17 +14,18 @@ import static javax.persistence.GenerationType.SEQUENCE;
 public class Cliente {
 
     @Id
-    @Column(name="idCliente")
+    @Column(name="id_cliente")
     @GeneratedValue(strategy=SEQUENCE, generator="ID_SEQ")
     private Integer id;
 
     @Column(name="cuit")
     private String cuit;
 
-    @Column(name="razonSocial")
+    @Column(name="razon_social")
     private String razonSocial;
 
-    @Column(name="") //falta asociar las tablas TODO
+    @OneToMany
+    @JoinColumn(name="provision_servicios", referencedColumnName="id_provision_servicio")
     private ArrayList<ProvisionServicio> provisionServicios;
 
     @Column(name="email")
