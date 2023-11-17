@@ -15,4 +15,13 @@ public class Notificacion {
         this.cliente = cliente;
         this.problema = problema;
     }
+
+    @Override
+    public String toString() {
+        return "Notificacion{" +
+                "cliente= CUIT " + cliente.getCuit() + " Razon Social: " + cliente.getRazonSocial() + '\'' +
+                ", descripcion= " + descripcion + '\'' +
+                ", problema=" + problema.toString() +
+                '}';
+    }
 }
