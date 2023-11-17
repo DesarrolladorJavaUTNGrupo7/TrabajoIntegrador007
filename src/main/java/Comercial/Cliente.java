@@ -24,7 +24,7 @@ public class Cliente {
     @Column(name="razonSocial")
     private String razonSocial;
 
-    @Column(name="") //falta asociar las tablas
+    @Column(name="") //falta asociar las tablas TODO
     private ArrayList<ProvisionServicio> provisionServicios;
 
     @Column(name="email")
@@ -45,6 +45,7 @@ public class Cliente {
     }
 
     public void notificarIncidenteSolucionado(){
+        //TODO
         System.out.println("Notificar al cliente que el incidente fue solucionado!");
     }
 }

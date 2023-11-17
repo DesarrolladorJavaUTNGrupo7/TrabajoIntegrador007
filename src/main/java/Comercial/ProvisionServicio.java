@@ -19,10 +19,10 @@ public class ProvisionServicio {
     @GeneratedValue(strategy=SEQUENCE, generator="ID_SEQ")
     private Integer id;
 
-    @Column(name="Cliente_idCliente") //controlar asociacion con tabla cliente
+    @Column(name="Cliente_idCliente") //controlar asociacion con tabla cliente TODO
     private Cliente cliente;
 
-    @Column(name="Servicio_idServicio") //controlar asociacion con tabla servicio
+    @Column(name="Servicio_idServicio") //controlar asociacion con tabla servicio TODO
     private Servicio servicio;
 
     @Column(name="fechaDeContrato")
@@ -42,6 +42,7 @@ public class ProvisionServicio {
     }
 
     public boolean servicioVigente(){
+        //TODO
         System.out.println("Crear Codigo del metodo");
         return true;
     }
