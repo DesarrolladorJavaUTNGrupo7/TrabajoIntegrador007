@@ -37,7 +37,7 @@ public class Cliente {
     public Cliente() {
     }
 
-    public Cliente(String cuit, String razonSocial, ArrayList<ProvisionServicio> provisionServicios, String email, String direccion) {
+    public Cliente(String cuit, String razonSocial, List<ProvisionServicio> provisionServicios, String email, String direccion) {
         this.cuit = cuit;
         this.razonSocial = razonSocial;
         this.provisionServicios = provisionServicios;
