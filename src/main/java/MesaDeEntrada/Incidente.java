@@ -79,7 +79,7 @@ public class Incidente {
 
     public Notificacion generarNotificacion(Cliente cliente, Problema problema, String descripcion){
         //TODO
-        //logica para generar notificacion
+        // Notificacion notificacion = new Notificacion(descripcion,cliente,problema);
 
         return new Notificacion();
     }
@@ -94,5 +94,12 @@ public class Incidente {
 
         this.setConsideracion(consideracion);
         this.setEstaResuelto(true);
+    }
+
+    public Cliente obtenerCliente(String razonSocial, String Cuit){
+
+        //TODO
+
+        return getCliente();
     }
 }
