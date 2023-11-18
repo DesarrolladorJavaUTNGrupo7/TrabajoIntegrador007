@@ -4,7 +4,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.util.ArrayList;
+import java.util.List;
 
 import static javax.persistence.GenerationType.SEQUENCE;
 
@@ -26,7 +26,7 @@ public class Cliente {
 
     @OneToMany
     @JoinColumn(name="provision_servicios", referencedColumnName="id_provision_servicio")
-    private ArrayList<ProvisionServicio> provisionServicios;
+    private List<ProvisionServicio> provisionServicios;
 
     @Column(name="email")
     private String email;
