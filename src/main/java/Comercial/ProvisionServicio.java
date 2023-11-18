@@ -19,10 +19,11 @@ public class ProvisionServicio {
     @GeneratedValue(strategy=SEQUENCE, generator="ID_SEQ")
     private Integer id;
 
-    @Column(name="Cliente_id_cliente") //controlar asociacion con tabla cliente TODO
+    @ManyToOne
     private Cliente cliente;
 
-    @Column(name="Servicio_id_servicio") //controlar asociacion con tabla servicio TODO
+    @OneToOne
+    @JoinColumn(name="servicio", referencedColumnName="id_servicio")
     private Servicio servicio;
 
     @Column(name="fecha_de_contrato")
