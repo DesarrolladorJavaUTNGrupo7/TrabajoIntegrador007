@@ -13,7 +13,7 @@ import static javax.persistence.GenerationType.SEQUENCE;
 public class Servicio{
 
     @Id
-    @Column(name="idServicio")
+    @Column(name="id_servicio")
     @GeneratedValue(strategy=SEQUENCE, generator="ID_SEQ")
     private Integer id;
 
