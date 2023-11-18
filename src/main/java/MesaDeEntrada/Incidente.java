@@ -66,22 +66,22 @@ public class Incidente {
         this.tiempoDeResolucionEspecifico = tiempoDeResolucionEspecifico;
     }
 
-    public List<Tecnico> obtenerTecnicos(TipoProblema tipoProblema){
+    public /*List<Tecnico>*/ void obtenerTecnicos(TipoProblema tipoProblema){
 
         //TODO
 
         //logica para obtener  lista
 
-        return tecnicosParaTipoProblema;
+        //return new List<Tecnico>(new Tecnico());
     }
 
 
 
-    public Notificacion generarNotificacion(Cliente cliente, Problema problema, String descripcion){
+    public /*Notificacion*/ void generarNotificacion(Cliente cliente, Problema problema, String descripcion){
         //TODO
         // Notificacion notificacion = new Notificacion(descripcion,cliente,problema);
 
-        return new Notificacion();
+        //return new Notificacion();
     }
 
     public void calcularTiempoResolucionEspecifico(){
