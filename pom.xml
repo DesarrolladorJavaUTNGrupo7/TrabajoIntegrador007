@@ -22,10 +22,24 @@
             <scope>provided</scope>
         </dependency>
 
+        <!-- Dependencia para Java EE (incluye JPA) -->
         <dependency>
-            <groupId>org.hibernate.javax.persistence</groupId>
-            <artifactId>hibernate-jpa-2.1-api</artifactId>
-            <version>1.0.2.Final</version>
+            <groupId>javax</groupId>
+            <artifactId>javaee-api</artifactId>
+            <version>8.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <!-- Implementación de JPA (Hibernate en este caso) -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>5.6.5.Final</version>
+        </dependency>
+        <!-- Driver de MySQL -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>8.0.23</version>
         </dependency>
     </dependencies>
 
