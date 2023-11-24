@@ -1,5 +1,6 @@
 package Comercial;
 
+import RRHH.MedioDeNotificacion;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -24,29 +25,18 @@ public class Cliente {
     @Column(name="razon_social")
     private String razonSocial;
 
+    @OneToOne
+    @JoinColumn(name = "medio_notificacion", referencedColumnName = "id_medio_de_notificacion")
+    private MedioDeNotificacion medioNotificacion;
+
     @OneToMany
-    @JoinColumn(name="provision_servicios", referencedColumnName="id_provision_servicio")
-    private List<ProvisionServicio> provisionServicios;
+    @JoinColumn(name = "lista_servicio", referencedColumnName = "id_servicio")
+    private List<Servicio> listaServicio;
 
-    @Column(name="email")
-    private String email;
-
-    @Column(name="direccion")
-    private String direccion;
-
-    public Cliente() {
-    }
-
-    public Cliente(String cuit, String razonSocial, List<ProvisionServicio> provisionServicios, String email, String direccion) {
+    public Cliente(String cuit, String razonSocial, MedioDeNotificacion medioNotificacion, List<Servicio> listaServicio) {
         this.cuit = cuit;
         this.razonSocial = razonSocial;
-        this.provisionServicios = provisionServicios;
-        this.email = email;
-        this.direccion = direccion;
-    }
-
-    public void notificarIncidenteSolucionado(){
-        //TODO
-        System.out.println("Notificar al cliente que el incidente fue solucionado!");
+        this.medioNotificacion = medioNotificacion;
+        this.listaServicio = listaServicio;
     }
 }

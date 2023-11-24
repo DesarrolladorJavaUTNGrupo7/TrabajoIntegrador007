@@ -19,15 +19,15 @@ public class Problema {
     @Column(name = "descripcion")
     private String descripcion;
 
+    @OneToOne
+    @JoinColumn(name="tipo", referencedColumnName="id_tipo_problema")
+    private TipoProblema tipo;
+
     @Column(name = "es_complejo")
     private Boolean esComplejo;
 
     @Column(name = "colchon_horas")
     private Double colchonHoras;
-
-    @OneToOne
-    @JoinColumn(name="tipo", referencedColumnName="id_tipo_problema")
-    private TipoProblema tipo;
 
     public Problema(String descripcion, Boolean esComplejo, Double colchonHoras, TipoProblema tipo) {
         this.descripcion = descripcion;

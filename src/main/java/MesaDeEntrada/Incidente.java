@@ -33,16 +33,19 @@ public class Incidente {
     @Column(name="consideracion")
     private String consideracion;
 
-    @Column(name="fecha_cliente")
-    private Date fechaCliente;
+    @Column(name = "fecha_cierre")
+    private Date fechaCierre;
 
-    @Column(name="cliente_id_cliente")
+    @OneToOne
+    @JoinColumn(name = "cliente", referencedColumnName = "id_cliente")
     private Cliente cliente;
 
-    @Column(name="tecnico_id_tecnico")
+    @OneToOne
+    @JoinColumn(name = "tecnico", referencedColumnName = "id_tecnico")
     private Tecnico tecnico;
 
-    @Column(name="servicio_id_servicio")
+    @OneToOne
+    @JoinColumn(name = "servicio", referencedColumnName = "id_servicio")
     private Servicio servicio;
 
     @OneToMany
@@ -52,13 +55,12 @@ public class Incidente {
     @Column(name="tiempo_de_resolucion_especifico")
     private double tiempoDeResolucionEspecifico;
 
-
-    public Incidente(Date fechaIngreso, boolean estaResuelto, String descripcion, String consideracion, Date fechaCliente, Cliente cliente, Tecnico tecnico, Servicio servicio, List<Problema> problemas, double tiempoDeResolucionEspecifico) {
+    public Incidente(Date fechaIngreso, boolean estaResuelto, String descripcion, String consideracion, Date fechaCierre, Cliente cliente, Tecnico tecnico, Servicio servicio, List<Problema> problemas, double tiempoDeResolucionEspecifico) {
         this.fechaIngreso = fechaIngreso;
         this.estaResuelto = estaResuelto;
         this.descripcion = descripcion;
         this.consideracion = consideracion;
-        this.fechaCliente = fechaCliente;
+        this.fechaCierre = fechaCierre;
         this.cliente = cliente;
         this.tecnico = tecnico;
         this.servicio = servicio;

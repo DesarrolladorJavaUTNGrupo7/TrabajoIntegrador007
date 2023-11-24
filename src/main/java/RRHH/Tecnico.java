@@ -2,11 +2,14 @@ package RRHH;
 
 import MesaDeEntrada.Incidente;
 import MesaDeEntrada.Notificacion;
+import MesaDeEntrada.TipoProblema;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.util.List;
+import java.util.Map;
 
 import static javax.persistence.GenerationType.SEQUENCE;
 
@@ -24,36 +27,41 @@ public class Tecnico {
     @Column(name = "cuit")
     private String cuit;
 
+    @OneToMany(mappedBy = "tecnico")
+    @JoinColumn(name = "especialidades", referencedColumnName = "id_especialidad")
+    private List<Especialidad> especialidades;
+
+    @ManyToOne
+    @JoinColumn(name = "medio_de_notificacion_preferido", referencedColumnName = "id_medio_de_notificacion")
+    private MedioDeNotificacion medioDeNotificacionPreferido;
+
     @Column(name = "nombre")
     private String nombre;
 
-    @ManyToOne
-    @JoinColumn(name = "medio_de_notificacion_id_medio_de_notificacion")
-    private MedioDeNotificacion medioDeNotificacionPreferido;
+    @Column(name = "tiempo_personalizado")
+    private Map<TipoProblema, Double> tiempoPersonalizado;
 
-    @OneToMany(mappedBy = "tecnico")
-    private List<Especialidad> especialidades;
+    @Column(name = "apellido")
+    private String apellido;
 
-    @OneToMany(mappedBy = "tecnico")
-    private List<Incidente> incidentes;
-    private Notificacion notificacion;
+    @Column(name = "fecha_nacimiento")
+    private LocalDate fechaNacimiento;
 
-    public Tecnico(String cuit, String nombre, MedioDeNotificacion medioDeNotificacionPreferido, List<Especialidad> especialidades, List<Incidente> incidentes) {
+    @Column(name = "esta_disponible")
+    private Boolean estaDisponible;
+
+    @Column(name = "notificaciones")
+    private List<MedioDeNotificacion> notificaciones;
+
+    public Tecnico(String cuit, List<Especialidad> especialidades, MedioDeNotificacion medioDeNotificacionPreferido, String nombre, Map<TipoProblema, Double> tiempoPersonalizado, String apellido, LocalDate fechaNacimiento, Boolean estaDisponible, List<MedioDeNotificacion> notificaciones) {
         this.cuit = cuit;
-        this.nombre = nombre;
-        this.medioDeNotificacionPreferido = medioDeNotificacionPreferido;
         this.especialidades = especialidades;
-        this.incidentes = incidentes;
-    }
-
-    public void setMedioDeNotificacionPreferido(String medioDeNotificacionPreferido) {
-        //TODO
-
-    }
-
-    public void notificarProblema(Notificacion notificacion) {
-        this.notificacion = notificacion;
-        //TODO
-
+        this.medioDeNotificacionPreferido = medioDeNotificacionPreferido;
+        this.nombre = nombre;
+        this.tiempoPersonalizado = tiempoPersonalizado;
+        this.apellido = apellido;
+        this.fechaNacimiento = fechaNacimiento;
+        this.estaDisponible = estaDisponible;
+        this.notificaciones = notificaciones;
     }
 }

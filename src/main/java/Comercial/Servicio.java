@@ -1,5 +1,6 @@
 package Comercial;
 
+import MesaDeEntrada.TipoProblema;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -23,10 +24,12 @@ public class Servicio{
     @Column(name="descripcion")
     private String descripcion;
 
-    public Servicio(String nombre, String descripcion) {
+    @Column(name = "tipo_problemas")
+    private TipoProblema tipoProblemas;
+
+    public Servicio(String nombre, String descripcion, TipoProblema tipoProblemas) {
         this.nombre = nombre;
         this.descripcion = descripcion;
-    }
-    public Servicio() {
+        this.tipoProblemas = tipoProblemas;
     }
 }

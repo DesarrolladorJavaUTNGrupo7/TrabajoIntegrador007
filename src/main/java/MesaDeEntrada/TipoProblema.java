@@ -22,6 +22,9 @@ public class TipoProblema {
     @Column(name = "nombre")
     private String nombre;
 
+    @Column(name = "descripcion")
+    private String descripcion;
+
     @Column(name = "tiempo_de_resolucion_maximo")
     private Double tiempoDeResolucionMaximo;
 

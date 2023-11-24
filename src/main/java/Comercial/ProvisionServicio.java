@@ -29,24 +29,13 @@ public class ProvisionServicio {
     @Column(name="fecha_de_contrato")
     private Date fechaDeContrato;
 
-    @Column(name="fecha_de_vencimiento")
-    private Date fechaDeVencimiento;
+    @Column(name="pago_mensual")
+    private Double pagoMensual;
 
-    public ProvisionServicio() {
-    }
-
-    public ProvisionServicio(Cliente cliente, Servicio servicio, Date fechaDeContrato, Date fechaDeVencimiento) {
+    public ProvisionServicio(Cliente cliente, Servicio servicio, Date fechaDeContrato, Double pagoMensual) {
         this.cliente = cliente;
         this.servicio = servicio;
         this.fechaDeContrato = fechaDeContrato;
-        this.fechaDeVencimiento = fechaDeVencimiento;
-    }
-
-    public boolean servicioVigente(){
-
-        //TODO
-
-        System.out.println("Crear Codigo del metodo");
-        return true;
+        this.pagoMensual = pagoMensual;
     }
 }
