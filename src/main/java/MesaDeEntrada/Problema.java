@@ -1,5 +1,6 @@
 package MesaDeEntrada;
 
+import RRHH.Tecnico;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -29,6 +30,9 @@ public class Problema {
     @Column(name = "colchon_horas")
     private Double colchonHoras;
 
+    @Column(name = "tiempo_de_resolucion")
+    private Double tiempoDeResolucion;
+
     public Problema(String descripcion, Boolean esComplejo, Double colchonHoras, TipoProblema tipo) {
         this.descripcion = descripcion;
         this.esComplejo = esComplejo;
@@ -36,7 +40,11 @@ public class Problema {
         this.tipo = tipo;
     }
 
-    public void setColchonDeHoras(Double horas){
+    public void setTiempoDeResolucion(Tecnico tecnico){
         //TODO
+    }
+
+    public Double getTiempoDeResolucion(){
+        return 0.5; //TODO
     }
 }
