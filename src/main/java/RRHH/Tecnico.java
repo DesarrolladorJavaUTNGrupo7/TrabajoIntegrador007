@@ -1,15 +1,11 @@
 package RRHH;
 
-import MesaDeEntrada.Incidente;
-import MesaDeEntrada.Notificacion;
-import MesaDeEntrada.TipoProblema;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
-import java.util.Map;
 
 import static javax.persistence.GenerationType.SEQUENCE;
 
@@ -39,7 +35,7 @@ public class Tecnico {
     private String nombre;
 
     @Column(name = "tiempo_personalizado")
-    private Map<TipoProblema, Double> tiempoPersonalizado;
+    private List<TiempoEstimadoPorTipoProblema> tiemposPersonalizados;
 
     @Column(name = "apellido")
     private String apellido;
@@ -53,12 +49,12 @@ public class Tecnico {
     @Column(name = "notificaciones")
     private List<MedioDeNotificacion> notificaciones;
 
-    public Tecnico(String cuit, List<Especialidad> especialidades, MedioDeNotificacion medioDeNotificacionPreferido, String nombre, Map<TipoProblema, Double> tiempoPersonalizado, String apellido, LocalDate fechaNacimiento, Boolean estaDisponible, List<MedioDeNotificacion> notificaciones) {
+    public Tecnico(String cuit, List<Especialidad> especialidades, MedioDeNotificacion medioDeNotificacionPreferido, String nombre, List<TiempoEstimadoPorTipoProblema> tiemposPersonalizados, String apellido, LocalDate fechaNacimiento, Boolean estaDisponible, List<MedioDeNotificacion> notificaciones) {
         this.cuit = cuit;
         this.especialidades = especialidades;
         this.medioDeNotificacionPreferido = medioDeNotificacionPreferido;
         this.nombre = nombre;
-        this.tiempoPersonalizado = tiempoPersonalizado;
+        this.tiemposPersonalizados = tiemposPersonalizados;
         this.apellido = apellido;
         this.fechaNacimiento = fechaNacimiento;
         this.estaDisponible = estaDisponible;

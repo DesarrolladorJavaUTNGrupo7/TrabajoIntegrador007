@@ -31,4 +31,11 @@ public class TipoProblema {
     @OneToMany
     @JoinColumn(name = "especialidades", referencedColumnName = "id_especialidad")
     private List<Especialidad> especialidades;
+
+    public TipoProblema(String nombre, String descripcion, Double tiempoDeResolucionMaximo, List<Especialidad> especialidades) {
+        this.nombre = nombre;
+        this.descripcion = descripcion;
+        this.tiempoDeResolucionMaximo = tiempoDeResolucionMaximo;
+        this.especialidades = especialidades;
+    }
 }
