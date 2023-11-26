@@ -38,4 +38,8 @@ public class TipoProblema {
         this.tiempoDeResolucionMaximo = tiempoDeResolucionMaximo;
         this.especialidades = especialidades;
     }
+
+    public void agregarEspecialidad(Especialidad especialidad){
+        this.especialidades.add(especialidad);
+    }
 }

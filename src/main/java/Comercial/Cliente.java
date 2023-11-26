@@ -45,4 +45,12 @@ public class Cliente {
         this.listaServicio = listaServicio;
         this.notificaciones = notificaciones;
     }
+
+    public void agregarServicio(Servicio servicio){
+        this.listaServicio.add(servicio);
+    }
+
+    public void agregarMensaje(Notificacion notificacion){
+        this.notificaciones.add(notificacion);
+    }
 }

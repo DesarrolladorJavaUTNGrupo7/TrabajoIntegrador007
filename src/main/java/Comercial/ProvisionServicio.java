@@ -37,5 +37,8 @@ public class ProvisionServicio {
         this.servicio = servicio;
         this.fechaDeContrato = fechaDeContrato;
         this.pagoMensual = pagoMensual;
+
+        // Controlar si esta bien agregar el servicio al cliente desde el constructor
+        cliente.agregarServicio(servicio);
     }
 }

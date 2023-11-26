@@ -6,6 +6,8 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
+import java.util.List;
+
 import static javax.persistence.GenerationType.SEQUENCE;
 
 @Entity
@@ -25,11 +27,15 @@ public class Servicio{
     private String descripcion;
 
     @Column(name = "tipo_problemas")
-    private TipoProblema tipoProblemas;
+    private List<TipoProblema> tipoProblemas;
 
-    public Servicio(String nombre, String descripcion, TipoProblema tipoProblemas) {
+    public Servicio(String nombre, String descripcion, List<TipoProblema> tipoProblemas) {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.tipoProblemas = tipoProblemas;
+    }
+
+    public void agregarTipoProblema(TipoProblema tipoProblema){
+        this.tipoProblemas.add(tipoProblema);
     }
 }
