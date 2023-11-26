@@ -22,7 +22,9 @@ public class Main {
         listaEspecialidades.add(EspecialidadAplicaciones);
 
         TipoProblema tipoProblema1 = new TipoProblema("SAP", "Aplicacion SAP no funciona", 3.5, listaEspecialidades);
-        Servicio servicio1 = new Servicio("Aplicaciones","servicio para Aplicaciones",tipoProblema1);
+        List<TipoProblema> tiposProblemas = new ArrayList<>();
+        tiposProblemas.add(tipoProblema1);
+        Servicio servicio1 = new Servicio("Aplicaciones","servicio para Aplicaciones",tiposProblemas);
         List<Servicio> serviciosContratados = new ArrayList<>();
         serviciosContratados.add(servicio1);
 
