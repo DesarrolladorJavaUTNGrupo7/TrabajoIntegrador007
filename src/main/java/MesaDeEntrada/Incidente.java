@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
 
@@ -21,8 +22,9 @@ public class Incidente {
     @GeneratedValue(strategy=SEQUENCE, generator="ID_SEQ")
     private Integer id;
 
+    //se cambia tipo de dato Date por DateTime para hacer pruebas
     @Column(name="fecha_ingreso")
-    private Date fechaIngreso;
+    private LocalDateTime fechaIngreso;
 
     @Column(name="esta_resuelto")
     private boolean estaResuelto;
@@ -33,8 +35,9 @@ public class Incidente {
     @Column(name="consideracion")
     private String consideracion;
 
+    //se cambia tipo de dato Date por DateTime para hacer pruebas
     @Column(name = "fecha_cierre")
-    private Date fechaCierre;
+    private LocalDateTime fechaCierre;
 
     @OneToOne
     @JoinColumn(name = "cliente", referencedColumnName = "id_cliente")
@@ -55,7 +58,9 @@ public class Incidente {
     @Column(name="tiempo_de_resolucion_especifico")
     private double tiempoDeResolucionEspecifico;
 
-    public Incidente(Date fechaIngreso, boolean estaResuelto, String descripcion, String consideracion, Date fechaCierre, Cliente cliente, Tecnico tecnico, Servicio servicio, List<Problema> problemas, double tiempoDeResolucionEspecifico) {
+
+    //se cambia tipo de dato Date por DateTime para hacer pruebas
+    public Incidente(LocalDateTime fechaIngreso, boolean estaResuelto, String descripcion, String consideracion, LocalDateTime fechaCierre, Cliente cliente, Tecnico tecnico, Servicio servicio, List<Problema> problemas, double tiempoDeResolucionEspecifico) {
         this.fechaIngreso = fechaIngreso;
         this.estaResuelto = estaResuelto;
         this.descripcion = descripcion;
