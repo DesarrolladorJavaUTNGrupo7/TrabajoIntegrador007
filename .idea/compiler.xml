@@ -7,7 +7,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="UTN_JAVA_UTN" />
-        <module name="TrabajoIntegrador007" />
       </profile>
     </annotationProcessing>
   </component>

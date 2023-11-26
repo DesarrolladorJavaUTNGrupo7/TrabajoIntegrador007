@@ -1,5 +1,6 @@
 package Comercial;
 
+import MesaDeEntrada.Notificacion;
 import RRHH.MedioDeNotificacion;
 import lombok.Getter;
 import lombok.Setter;
@@ -32,6 +33,9 @@ public class Cliente {
     @OneToMany
     @JoinColumn(name = "lista_servicio", referencedColumnName = "id_servicio")
     private List<Servicio> listaServicio;
+
+    @Column(name = "notificaciones")
+    private List<Notificacion> notificaciones;
 
     public Cliente(String cuit, String razonSocial, MedioDeNotificacion medioNotificacion, List<Servicio> listaServicio) {
         this.cuit = cuit;
