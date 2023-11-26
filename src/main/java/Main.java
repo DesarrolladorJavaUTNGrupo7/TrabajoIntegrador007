@@ -4,11 +4,9 @@ import MesaDeEntrada.Incidente;
 import MesaDeEntrada.Notificacion;
 import MesaDeEntrada.Problema;
 import MesaDeEntrada.TipoProblema;
-import RRHH.Especialidad;
-import RRHH.Informe;
-import RRHH.Mail;
-import RRHH.MedioDeNotificacion;
+import RRHH.*;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,27 +19,35 @@ public class Main {
         Especialidad EspecialidadAplicaciones = new Especialidad("Aplicacones","especialista en aplicaciones");
         listaEspecialidades.add(EspecialidadAplicaciones);
 
+        List<TiempoEstimadoPorTipoProblema> tiemposEstimadosPorTipoDeProblema = new ArrayList<>();
+        TiempoEstimadoPorTipoProblema tiempoEstimadoPorTipoDeProblemaAplicacion = new TiempoEstimadoPorTipoProblema();
+        tiemposEstimadosPorTipoDeProblema.add(tiempoEstimadoPorTipoDeProblemaAplicacion);
+
+
         TipoProblema tipoProblema1 = new TipoProblema("SAP", "Aplicacion SAP no funciona", 3.5, listaEspecialidades);
         Servicio servicio1 = new Servicio("Aplicaciones","servicio para Aplicaciones",tipoProblema1);
         List<Servicio> serviciosContratados = new ArrayList<>();
         serviciosContratados.add(servicio1);
 
-
         Problema problema1 = new Problema("problema1",true,2.3,tipoProblema1);
 
-        //Posible dependencia ciclica entre cliente y notificacion!!
-        /*
-        Cliente cliente1 = new Cliente("20-30225678-2","Pepito", medioNotificacionEMail,serviciosContratados,);
-        Notificacion notificaion1 = new Notificacion("primer Notificacion",cliente1,problema1);
-        List<Notificacion> notificaciones = new ArrayList<>();
+        List<Problema> listaproblemas = new ArrayList<>();
+
+        
         MedioDeNotificacion medioNotificacionEMail = new Mail("mensaje1","email");
-        */
+        Cliente cliente1 = new Cliente("20-30225678-2","Pepito", medioNotificacionEMail,serviciosContratados,notificaciones);
+        LocalDate nacimientoTecnico= LocalDate.of(1980, 03, 07);
+        Tecnico tecnico = new Tecnico("20-20227655-2", listaEspecialidades, medioNotificacionEMail, "Pepe",tiemposEstimadosPorTipoDeProblema, "lalo", nacimientoTecnico, true, notificaciones);
 
 
-        LocalDateTime FechaIngresoINC1 = LocalDateTime.now();
-        LocalDateTime FechaCierreINC1 = FechaIngresoINC1.plusDays(3);
+        LocalDateTime fechaIngresoINC1 = LocalDateTime.now();
+        LocalDateTime fechaCierreINC1 = fechaIngresoINC1.plusDays(3);
 
-        // Incidente INC1 = new Incidente(FechaIngresoINC1, false, "Incidente de prueba", "Este es el primer INC", FechaCierreINC1,);
+         Incidente INC1 = new Incidente(fechaIngresoINC1, false, "Incidente de prueba", "Este es el primer INC", fechaCierreINC1, cliente1, tecnico, servicio1, listaproblemas, 4);
+        LocalDate fechaEnvioNotificacion = LocalDate.now();
+         Notificacion notificaion1 = new Notificacion("primer notificacion","Este es un cuerpo de notificacion",INC1,true,fechaEnvioNotificacion);
+        List<Notificacion> notificaciones = new ArrayList<>();
+        notificaciones.add(notificaion1);
     }
 
 }
