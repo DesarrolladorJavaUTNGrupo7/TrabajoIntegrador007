@@ -9,10 +9,6 @@ public class Informe {
         // retorna List<Incidente>
         // TODO
     }
-    public static void obtenerTecnicoConMasIncidentes(Integer dias){
-        //retorna Tecnico
-        // TODO
-    }
     public static void obtenerTecnicoConMasIncidentes(Integer dias, Especialidad especialidad){
         //retorna Tecnico
         // TODO

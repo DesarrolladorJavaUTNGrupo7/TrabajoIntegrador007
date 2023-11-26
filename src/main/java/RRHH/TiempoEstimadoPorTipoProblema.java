@@ -21,5 +21,6 @@ public class TiempoEstimadoPorTipoProblema {
     @JoinColumn(name = "tipo_problema", referencedColumnName = "id_tipo_problema")
     private TipoProblema tipoProblema;
 
+    @Column(name = "tiempo_estimado")
     private Double tiempoEstimado;
 }

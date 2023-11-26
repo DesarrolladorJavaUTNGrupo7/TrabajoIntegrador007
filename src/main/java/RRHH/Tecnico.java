@@ -1,5 +1,6 @@
 package RRHH;
 
+import MesaDeEntrada.Notificacion;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -47,9 +48,9 @@ public class Tecnico {
     private Boolean estaDisponible;
 
     @Column(name = "notificaciones")
-    private List<MedioDeNotificacion> notificaciones;
+    private List<Notificacion> notificaciones;
 
-    public Tecnico(String cuit, List<Especialidad> especialidades, MedioDeNotificacion medioDeNotificacionPreferido, String nombre, List<TiempoEstimadoPorTipoProblema> tiemposPersonalizados, String apellido, LocalDate fechaNacimiento, Boolean estaDisponible, List<MedioDeNotificacion> notificaciones) {
+    public Tecnico(String cuit, List<Especialidad> especialidades, MedioDeNotificacion medioDeNotificacionPreferido, String nombre, List<TiempoEstimadoPorTipoProblema> tiemposPersonalizados, String apellido, LocalDate fechaNacimiento, Boolean estaDisponible, List<Notificacion> notificaciones) {
         this.cuit = cuit;
         this.especialidades = especialidades;
         this.medioDeNotificacionPreferido = medioDeNotificacionPreferido;
