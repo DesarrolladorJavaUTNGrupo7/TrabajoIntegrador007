@@ -37,10 +37,12 @@ public class Cliente {
     @Column(name = "notificaciones")
     private List<Notificacion> notificaciones;
 
-    public Cliente(String cuit, String razonSocial, MedioDeNotificacion medioNotificacion, List<Servicio> listaServicio) {
+
+    public Cliente(String cuit, String razonSocial, MedioDeNotificacion medioNotificacion, List<Servicio> listaServicio, List<Notificacion> notificaciones) {
         this.cuit = cuit;
         this.razonSocial = razonSocial;
         this.medioNotificacion = medioNotificacion;
         this.listaServicio = listaServicio;
+        this.notificaciones = notificaciones;
     }
 }
