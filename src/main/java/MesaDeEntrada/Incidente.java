@@ -78,33 +78,26 @@ public class Incidente {
 
     }
 
+
     public void agregarProblema(Problema problema){
         problemas.add(problema);
-  }
-
-  public void notificarTecnico(Notificacion notificacion){
-
-        //TODO
-      //como enviar notificacion al tecnico
-        //this.tecnico.
   }
 
 
 
     public void generarNotificacion(String titulo){
-        //TODO
-         Notificacion notificacion = new Notificacion(titulo,this.descripcion,this);
+         Notificacion notificacion = new Notificacion(titulo, this.descripcion,this);
 
-        //podria generar el medio de notificacion para agregarlo junto con la misma (con el parametro en el metodo)
         tecnico.agregarNotificacion(notificacion);
     }
 
     public void calcularYSetearTiempoResolucionEspecifico(){
+        this.tiempoDeResolucionEspecifico=0;
 
-        //TODO
-        //System.out.println("Tiempo de resolución específico: " + getTiempoDeResolucionEspecifico());
-        //recorrer lista problemas y obtener el tiempo de cada uno. sumar y setear
-        this.setTiempoDeResolucionEspecifico();
+        for (Problema x: problemas) {
+            this.tiempoDeResolucionEspecifico+= x.getTiempoDeResolucion();
+
+        }
 
     }
 

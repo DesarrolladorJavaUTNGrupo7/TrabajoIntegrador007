@@ -15,7 +15,7 @@ public class Main {
     public static void main(String[] args) {
 
 
-        List<Especialidad> listaEspecialidades = new ArrayList<>();
+       /* List<Especialidad> listaEspecialidades = new ArrayList<>();
         Especialidad EspecialidadAplicaciones = new Especialidad("Aplicacones","especialista en aplicaciones");
         listaEspecialidades.add(EspecialidadAplicaciones);
 
@@ -35,7 +35,7 @@ public class Main {
 
         List<Problema> listaproblemas = new ArrayList<>();
 
-        
+
         MedioDeNotificacion medioNotificacionEMail = new Mail("mensaje1","email");
         Cliente cliente1 = new Cliente("20-30225678-2","Pepito",medioNotificacionEMail);
         LocalDate nacimientoTecnico= LocalDate.of(1980, 03, 07);
@@ -49,7 +49,7 @@ public class Main {
         LocalDate fechaEnvioNotificacion = LocalDate.now();
          Notificacion notificaion1 = new Notificacion("primer notificacion","Este es un cuerpo de notificacion",INC1);
         List<Notificacion> notificaciones = new ArrayList<>();
-        notificaciones.add(notificaion1);
+        notificaciones.add(notificaion1);*/
     }
 
 }
