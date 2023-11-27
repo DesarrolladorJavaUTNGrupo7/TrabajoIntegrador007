@@ -14,13 +14,15 @@ public class Notificacion {
     private boolean fueEnviado;
     private LocalDate fechaEnvioNotificacion;
 
-    public Notificacion(String titulo, String cuerpo, Incidente incidente, boolean fueEnviado, LocalDate fechaEnvioNotificacion) {
+    public Notificacion(String titulo, String cuerpo, Incidente incidente) {
         this.titulo = titulo;
         this.cuerpo = cuerpo;
         this.incidente = incidente;
-        this.fueEnviado = fueEnviado;
-        this.fechaEnvioNotificacion = fechaEnvioNotificacion;
+        this.fueEnviado = false;
+        //this.fechaEnvioNotificacion = fechaEnvioNotificacion;
     }
+
+
 
     @Override
     public String toString() {

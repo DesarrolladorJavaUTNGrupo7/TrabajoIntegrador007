@@ -37,9 +37,9 @@ public class Main {
 
         
         MedioDeNotificacion medioNotificacionEMail = new Mail("mensaje1","email");
-        Cliente cliente1 = new Cliente("20-30225678-2","Pepito", medioNotificacionEMail,serviciosContratados,notificaciones);
+        Cliente cliente1 = new Cliente("20-30225678-2","Pepito",medioNotificacionEMail);
         LocalDate nacimientoTecnico= LocalDate.of(1980, 03, 07);
-        Tecnico tecnico = new Tecnico("20-20227655-2", listaEspecialidades, medioNotificacionEMail, "Pepe",tiemposEstimadosPorTipoDeProblema, "lalo", nacimientoTecnico, true, notificaciones);
+        Tecnico tecnico = new Tecnico("20-20227655-2", listaEspecialidades, medioNotificacionEMail, "Pepe",tiemposEstimadosPorTipoDeProblema, "lalo", nacimientoTecnico, true);
 
 
         LocalDateTime fechaIngresoINC1 = LocalDateTime.now();
@@ -47,7 +47,7 @@ public class Main {
 
          Incidente INC1 = new Incidente(fechaIngresoINC1, false, "Incidente de prueba", "Este es el primer INC", fechaCierreINC1, cliente1, tecnico, servicio1, listaproblemas, 4);
         LocalDate fechaEnvioNotificacion = LocalDate.now();
-         Notificacion notificaion1 = new Notificacion("primer notificacion","Este es un cuerpo de notificacion",INC1,true,fechaEnvioNotificacion);
+         Notificacion notificaion1 = new Notificacion("primer notificacion","Este es un cuerpo de notificacion",INC1);
         List<Notificacion> notificaciones = new ArrayList<>();
         notificaciones.add(notificaion1);
     }
