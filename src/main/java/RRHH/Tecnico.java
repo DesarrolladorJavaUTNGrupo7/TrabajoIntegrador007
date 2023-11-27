@@ -1,12 +1,14 @@
 package RRHH;
 
 import MesaDeEntrada.Notificacion;
+import MesaDeEntrada.TipoProblema;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 
 import static javax.persistence.GenerationType.SEQUENCE;
 
@@ -60,5 +62,21 @@ public class Tecnico {
         this.fechaNacimiento = fechaNacimiento;
         this.estaDisponible = estaDisponible;
         this.notificaciones = notificaciones;
+    }
+
+    public void agregarNotificacion(Notificacion notificacion) {
+        this.notificaciones.add(notificacion);
+    }
+
+    public void agregarTiempoPersonalizado(TiempoEstimadoPorTipoProblema tiempoEstimadoPorTipoProblema) {
+            this.tiemposPersonalizados.add(tiempoEstimadoPorTipoProblema);
+
+    }
+
+    public Optional<Double> tieneTiempoPersonalizado(TipoProblema tipoProblema) {
+        return tiemposPersonalizados.stream()
+                .filter(tiempoEstimado -> tiempoEstimado.getTipoProblema().equals(tipoProblema))
+                .map(TiempoEstimadoPorTipoProblema::getTiempoEstimado)
+                .findFirst();
     }
 }
