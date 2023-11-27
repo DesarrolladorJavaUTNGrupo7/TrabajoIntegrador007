@@ -38,13 +38,14 @@ public class Cliente {
     private List<Notificacion> notificaciones;
 
 
-    public Cliente(String cuit, String razonSocial, MedioDeNotificacion medioNotificacion, List<Servicio> listaServicio, List<Notificacion> notificaciones) {
+    public Cliente(String cuit, String razonSocial,MedioDeNotificacion medioNotificacion) {
         this.cuit = cuit;
         this.razonSocial = razonSocial;
         this.medioNotificacion = medioNotificacion;
-        this.listaServicio = listaServicio;
-        this.notificaciones = notificaciones;
+
     }
+
+
 
     public void agregarServicio(Servicio servicio){
         this.listaServicio.add(servicio);
