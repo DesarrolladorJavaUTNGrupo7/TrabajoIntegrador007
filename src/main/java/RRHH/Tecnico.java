@@ -50,7 +50,7 @@ public class Tecnico {
     @Column(name = "notificaciones")
     private List<Notificacion> notificaciones;
 
-    public Tecnico(String cuit, List<Especialidad> especialidades, MedioDeNotificacion medioDeNotificacionPreferido, String nombre, List<TiempoEstimadoPorTipoProblema> tiemposPersonalizados, String apellido, LocalDate fechaNacimiento, Boolean estaDisponible, List<Notificacion> notificaciones) {
+    public Tecnico(String cuit, List<Especialidad> especialidades, MedioDeNotificacion medioDeNotificacionPreferido, String nombre, List<TiempoEstimadoPorTipoProblema> tiemposPersonalizados, String apellido, LocalDate fechaNacimiento, Boolean estaDisponible) {
         this.cuit = cuit;
         this.especialidades = especialidades;
         this.medioDeNotificacionPreferido = medioDeNotificacionPreferido;
@@ -60,5 +60,11 @@ public class Tecnico {
         this.fechaNacimiento = fechaNacimiento;
         this.estaDisponible = estaDisponible;
         this.notificaciones = notificaciones;
+    }
+
+
+    public void agregarNotificacion(Notificacion notificacion){
+        //podria ponerse el parametro de medio de notificacion asi lo recibe con el mismo y lo agrega al array notificaciones
+        notificaciones.add(notificacion);
     }
 }
