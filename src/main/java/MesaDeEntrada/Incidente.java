@@ -82,12 +82,12 @@ public class Incidente {
         problemas.add(problema);
   }
 
-  public void notificarTecnico(Notificacion notificacion){
+    public void notificarTecnico(Notificacion notificacion){
 
         //TODO
       //como enviar notificacion al tecnico
         //this.tecnico.
-  }
+    }
 
 
 
@@ -104,7 +104,7 @@ public class Incidente {
         //TODO
         //System.out.println("Tiempo de resolución específico: " + getTiempoDeResolucionEspecifico());
         //recorrer lista problemas y obtener el tiempo de cada uno. sumar y setear
-        this.setTiempoDeResolucionEspecifico();
+        //setTiempoDeResolucionEspecifico(0.1);
 
     }
 
