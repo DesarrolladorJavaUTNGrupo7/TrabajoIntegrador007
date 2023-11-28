@@ -64,8 +64,9 @@ public class Tecnico {
         this.notificaciones = notificaciones;
     }
 
+
+
     public void agregarNotificacion(Notificacion notificacion){
-        //podria ponerse el parametro de medio de notificacion asi lo recibe con el mismo y lo agrega al array notificaciones
         notificaciones.add(notificacion);
     }
 
