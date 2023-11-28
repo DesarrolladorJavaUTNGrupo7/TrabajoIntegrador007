@@ -6,6 +6,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static javax.persistence.GenerationType.SEQUENCE;
@@ -29,10 +30,10 @@ public class Servicio{
     @Column(name = "tipo_problemas")
     private List<TipoProblema> tipoProblemas;
 
-    public Servicio(String nombre, String descripcion, List<TipoProblema> tipoProblemas) {
+    public Servicio(String nombre, String descripcion) {
         this.nombre = nombre;
         this.descripcion = descripcion;
-        this.tipoProblemas = tipoProblemas;
+        this.tipoProblemas = new ArrayList<>();
     }
 
     public void agregarTipoProblema(TipoProblema tipoProblema){

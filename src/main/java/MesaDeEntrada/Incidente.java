@@ -10,6 +10,7 @@ import lombok.Setter;
 import javax.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -62,17 +63,14 @@ public class Incidente {
 
 
     //se cambia tipo de dato Date por DateTime para hacer pruebas
-    public Incidente(LocalDateTime fechaIngreso, boolean estaResuelto, String descripcion, String consideracion, LocalDateTime fechaCierre, Cliente cliente, Tecnico tecnico, Servicio servicio, List<Problema> problemas, double tiempoDeResolucionEspecifico) {
+    public Incidente(LocalDateTime fechaIngreso, String descripcion, Cliente cliente, Tecnico tecnico, Servicio servicio) {
         this.fechaIngreso = fechaIngreso;
-        this.estaResuelto = estaResuelto;
+        this.estaResuelto = false;
         this.descripcion = descripcion;
-        this.consideracion = consideracion;
-        this.fechaCierre = fechaCierre;
         this.cliente = cliente;
         this.tecnico = tecnico;
         this.servicio = servicio;
-        this.problemas = problemas;
-        this.tiempoDeResolucionEspecifico = tiempoDeResolucionEspecifico;
+        this.problemas = new ArrayList<>();
     }
 
 
