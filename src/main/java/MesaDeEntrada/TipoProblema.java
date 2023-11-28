@@ -6,6 +6,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static javax.persistence.GenerationType.SEQUENCE;
@@ -36,7 +37,7 @@ public class TipoProblema {
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.tiempoDeResolucionMaximo = tiempoDeResolucionMaximo;
-        this.especialidades = especialidades;
+        this.especialidades = new ArrayList<>();
     }
 
     public void agregarEspecialidad(Especialidad especialidad){
