@@ -8,6 +8,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
@@ -74,49 +75,32 @@ public class Incidente {
         this.tiempoDeResolucionEspecifico = tiempoDeResolucionEspecifico;
     }
 
-    public Incidente() {
-
-    }
 
     public void agregarProblema(Problema problema){
         problemas.add(problema);
   }
 
-    public void notificarTecnico(Notificacion notificacion){
-
-        //TODO
-      //como enviar notificacion al tecnico
-        //this.tecnico.
-    }
-
-
 
     public void generarNotificacion(String titulo){
-        //TODO
-         Notificacion notificacion = new Notificacion(titulo,this.descripcion,this);
+         Notificacion notificacion = new Notificacion(titulo, this.descripcion,this);
 
-        //podria generar el medio de notificacion para agregarlo junto con la misma (con el parametro en el metodo)
         tecnico.agregarNotificacion(notificacion);
     }
 
     public void calcularYSetearTiempoResolucionEspecifico(){
-
-        //TODO
-        //System.out.println("Tiempo de resolución específico: " + getTiempoDeResolucionEspecifico());
-        //recorrer lista problemas y obtener el tiempo de cada uno. sumar y setear
-        //setTiempoDeResolucionEspecifico(0.1);
-
+        this.tiempoDeResolucionEspecifico=0;
+      
+        for (Problema x: problemas) {
+            this.tiempoDeResolucionEspecifico+= x.getTiempoDeResolucion();
+        }
     }
 
     public void incidenteResuelto(String consideracion){
-
         this.setConsideracion(consideracion);
         this.setEstaResuelto(true);
     }
 
     public Cliente obtenerCliente(String razonSocial, String cuit){
-
-        //TODO
 
         if (razonSocial.equals(cliente.getRazonSocial()) && cuit.equals(cliente.getCuit())){
 

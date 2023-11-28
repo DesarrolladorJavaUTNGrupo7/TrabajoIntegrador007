@@ -33,7 +33,7 @@ public class Problema {
     @Column(name = "tiempo_de_resolucion")
     private Double tiempoDeResolucion;
 
-    public Problema(String descripcion, Boolean esComplejo, Double colchonHoras, TipoProblema tipo) {
+    public Problema(String descripcion, Boolean esComplejo, TipoProblema tipo) {
         this.descripcion = descripcion;
         this.esComplejo = esComplejo;
         this.colchonHoras = colchonHoras;
