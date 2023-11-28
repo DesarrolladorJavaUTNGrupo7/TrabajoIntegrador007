@@ -55,7 +55,7 @@ public class Tecnico {
 
     public Tecnico(String cuit, List<Especialidad> especialidades, MedioDeNotificacion medioDeNotificacionPreferido, String nombre, String apellido, LocalDate fechaNacimiento, Boolean estaDisponible) {
         this.cuit = cuit;
-        this.especialidades = especialidades;
+        this.especialidades = new ArrayList<>();
         this.medioDeNotificacionPreferido = medioDeNotificacionPreferido;
         this.nombre = nombre;
         this.apellido = apellido;
