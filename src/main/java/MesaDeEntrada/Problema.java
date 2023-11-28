@@ -38,8 +38,8 @@ public class Problema {
     public Problema(String descripcion, Boolean esComplejo, TipoProblema tipo, Double colchonHoras) {
         this.descripcion = descripcion;
         this.esComplejo = esComplejo;
-        this.colchonHoras = colchonHoras;
         this.tipo = tipo;
+        this.setColchonHoras(colchonHoras);
     }
 
     private void setTiempoDeResolucion(Tecnico tecnico) {
