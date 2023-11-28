@@ -37,21 +37,18 @@ public class Cliente {
     @Column(name = "notificaciones")
     private List<Notificacion> notificaciones;
 
-
     public Cliente(String cuit, String razonSocial,MedioDeNotificacion medioNotificacion) {
         this.cuit = cuit;
         this.razonSocial = razonSocial;
         this.medioNotificacion = medioNotificacion;
-
     }
-
-
 
     public void agregarServicio(Servicio servicio){
         this.listaServicio.add(servicio);
     }
 
-    public void agregarMensaje(Notificacion notificacion){
+    public void agregarMensajeYNotificar(Notificacion notificacion){
         this.notificaciones.add(notificacion);
+        this.medioNotificacion.enviarNotificacion(notificacion);
     }
 }

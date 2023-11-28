@@ -6,6 +6,8 @@ import lombok.Setter;
 
 import javax.persistence.*;
 
+import java.util.Optional;
+
 import static javax.persistence.GenerationType.SEQUENCE;
 
 @Entity
@@ -13,15 +15,15 @@ import static javax.persistence.GenerationType.SEQUENCE;
 @Getter @Setter
 public class Problema {
     @Id
-    @Column(name="id_problema")
-    @GeneratedValue(strategy=SEQUENCE, generator="ID_SEQ")
+    @Column(name = "id_problema")
+    @GeneratedValue(strategy = SEQUENCE, generator = "ID_SEQ")
     private int id;
 
     @Column(name = "descripcion")
     private String descripcion;
 
     @OneToOne
-    @JoinColumn(name="tipo", referencedColumnName="id_tipo_problema")
+    @JoinColumn(name = "tipo", referencedColumnName = "id_tipo_problema")
     private TipoProblema tipo;
 
     @Column(name = "es_complejo")
@@ -33,32 +35,17 @@ public class Problema {
     @Column(name = "tiempo_de_resolucion")
     private Double tiempoDeResolucion;
 
-    public Problema(String descripcion, Boolean esComplejo, Double colchonHoras, TipoProblema tipo) {
+    public Problema(String descripcion, Boolean esComplejo, TipoProblema tipo, Double colchonHoras) {
         this.descripcion = descripcion;
         this.esComplejo = esComplejo;
         this.colchonHoras = colchonHoras;
         this.tipo = tipo;
     }
 
-    private void setTiempoDeResolucion(Tecnico tecnico){
-        Double tiempoDelTecnico;
+    private void setTiempoDeResolucion(Tecnico tecnico) {
+        Optional<Double> aux = tecnico.tieneTiempoPersonalizado(this.tipo);
 
-        boolean aux = tecnico.getTiemposPersonalizados().stream().anyMatch( elemento -> {
-            boolean validador = elemento.getTipoProblema().equals(this.getTipo());
-
-            if (validador) {
-                tiempoDelTecnico = elemento.getTiempoEstimado();
-                return true;
-            }
-
-            return false;
-        });
-
-        if (!aux) {
-            this.tiempoDeResolucion = this.tipo.getTiempoDeResolucionMaximo();
-        } else {
-            this.tiempoDeResolucion = tiempoDelTecnico;
-        };
+        this.tiempoDeResolucion = aux.orElse(this.tipo.getTiempoDeResolucionMaximo());
     }
 
     public Double getTiempoDeResolucion(Tecnico tecnico) {
@@ -72,6 +59,7 @@ public class Problema {
             this.colchonHoras = colchonHoras;
         } else {
             this.colchonHoras = 0.0;
-        };
+        }
     }
 }
+
