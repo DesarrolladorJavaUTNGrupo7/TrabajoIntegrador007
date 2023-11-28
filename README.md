@@ -81,7 +81,7 @@ Este proyecto es un esfuerzo colaborativo del Grupo 7 de la Comisión 008 de est
 
 ### - Codigo de Modelado de Clases (UML):
 
-![Modelo UML](https://github.com/DesarrolladorJavaUTNGrupo7/TrabajoIntegrador007/blob/main/Diagramas/Diagrama%20de%20Clases.png)
+![Modelo UML](https://github.com/DesarrolladorJavaUTNGrupo7/TrabajoIntegrador007/blob/dd44e6fbcdb6e640fdf913e6fe23cc1486c58842/Diagramas/diagrama%20de%20clases.jpg)
 
 
 ---
