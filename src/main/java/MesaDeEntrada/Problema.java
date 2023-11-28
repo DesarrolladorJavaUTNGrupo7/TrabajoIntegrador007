@@ -40,11 +40,38 @@ public class Problema {
         this.tipo = tipo;
     }
 
-    public void setTiempoDeResolucion(Tecnico tecnico){
-        //TODO
+    private void setTiempoDeResolucion(Tecnico tecnico){
+        Double tiempoDelTecnico;
+
+        boolean aux = tecnico.getTiemposPersonalizados().stream().anyMatch( elemento -> {
+            boolean validador = elemento.getTipoProblema().equals(this.getTipo());
+
+            if (validador) {
+                tiempoDelTecnico = elemento.getTiempoEstimado();
+                return true;
+            }
+
+            return false;
+        });
+
+        if (!aux) {
+            this.tiempoDeResolucion = this.tipo.getTiempoDeResolucionMaximo();
+        } else {
+            this.tiempoDeResolucion = tiempoDelTecnico;
+        };
     }
 
-    public Double getTiempoDeResolucion(){
-        return 0.5; //TODO
+    public Double getTiempoDeResolucion(Tecnico tecnico) {
+        this.setTiempoDeResolucion(tecnico);
+
+        return this.tiempoDeResolucion + this.colchonHoras;
+    }
+
+    public void setColchonHoras(Double colchonHoras) {
+        if (this.esComplejo) {
+            this.colchonHoras = colchonHoras;
+        } else {
+            this.colchonHoras = 0.0;
+        };
     }
 }
