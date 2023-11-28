@@ -6,6 +6,9 @@ import MesaDeEntrada.Problema;
 import MesaDeEntrada.TipoProblema;
 import RRHH.*;
 
+import javax.persistence.EntityManager;
+import javax.persistence.EntityManagerFactory;
+import javax.persistence.Persistence;
 import java.sql.Date;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
@@ -52,6 +55,21 @@ public class Main {
         tecnico.agregarNotificacion(notificaion1);
 
         System.out.println(tecnico.getNotificaciones().get(0).toString());
+
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("JPA_PU");
+        EntityManager em = emf.createEntityManager();
+
+// Ejemplo de guardar un objeto en la base de datos
+
+// Configura los atributos del objeto
+        em.getTransaction().begin();
+        em.persist(problema1);
+        em.getTransaction().commit();
+
+// Otras operaciones CRUD...
+
+        em.close();
+        emf.close();
     }
 
 }

@@ -28,7 +28,6 @@ public class Tecnico {
     private String cuit;
 
     @OneToMany(mappedBy = "tecnico")
-    @JoinColumn(name = "especialidades", referencedColumnName = "id_especialidad")
     private List<Especialidad> especialidades;
 
     @ManyToOne

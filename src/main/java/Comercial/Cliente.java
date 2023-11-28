@@ -31,8 +31,8 @@ public class Cliente {
     @JoinColumn(name = "medio_notificacion", referencedColumnName = "id_medio_de_notificacion")
     private MedioDeNotificacion medioNotificacion;
 
-    @OneToMany
-    @JoinColumn(name = "lista_servicio", referencedColumnName = "id_servicio")
+   /* @OneToMany
+    @JoinColumn(name = "lista_servicio", referencedColumnName = "id_servicio") */
     private List<Servicio> listaServicio;
 
     @Column(name = "notificaciones")
