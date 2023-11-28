@@ -28,7 +28,7 @@ public class Main {
         TipoProblema tipoProblema1 = new TipoProblema("SAP", "Aplicacion SAP no funciona", 3.5, listaEspecialidades);
         List<TipoProblema> tiposProblemas = new ArrayList<>();
         tiposProblemas.add(tipoProblema1);
-        Servicio servicio1 = new Servicio("Aplicaciones","servicio para Aplicaciones",tiposProblemas);
+        Servicio servicio1 = new Servicio("Aplicaciones","servicio para Aplicaciones");
         List<Servicio> serviciosContratados = new ArrayList<>();
         serviciosContratados.add(servicio1);
 
@@ -46,7 +46,7 @@ public class Main {
         LocalDateTime fechaIngresoINC1 = LocalDateTime.now();
         LocalDateTime fechaCierreINC1 = fechaIngresoINC1.plusDays(3);
 
-         Incidente INC1 = new Incidente(fechaIngresoINC1, false, "Incidente de prueba", "Este es el primer INC", fechaCierreINC1, cliente1, tecnico, servicio1, listaproblemas, 4);
+         Incidente INC1 = new Incidente(fechaIngresoINC1, "Incidente de prueba", cliente1, tecnico, servicio1);
         LocalDate fechaEnvioNotificacion = LocalDate.now();
          Notificacion notificaion1 = new Notificacion("primer notificacion","Este es un cuerpo de notificacion",INC1);
          notificaion1.setFueEnviado(true);
@@ -59,17 +59,17 @@ public class Main {
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("JPA_PU");
         EntityManager em = emf.createEntityManager();
 
-// Ejemplo de guardar un objeto en la base de datos
+/*// Ejemplo de guardar un objeto en la base de datos
 
 // Configura los atributos del objeto
         em.getTransaction().begin();
-        em.persist(problema1);
+        //em.persist(problema1);
         em.getTransaction().commit();
 
 // Otras operaciones CRUD...
 
         em.close();
-        emf.close();
+        emf.close();*/
     }
 
 }
