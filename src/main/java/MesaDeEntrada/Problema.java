@@ -45,6 +45,6 @@ public class Problema {
     }
 
     public Double getTiempoDeResolucion(){
-        return 0.5; //TODO
+        return 0.0; //TODO
     }
-}
+

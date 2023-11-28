@@ -76,12 +76,9 @@ public class Incidente {
     }
 
 
-
-
     public void agregarProblema(Problema problema){
         problemas.add(problema);
   }
-
 
 
     public void generarNotificacion(String titulo){
@@ -92,22 +89,18 @@ public class Incidente {
 
     public void calcularYSetearTiempoResolucionEspecifico(){
         this.tiempoDeResolucionEspecifico=0;
-
+      
         for (Problema x: problemas) {
             this.tiempoDeResolucionEspecifico+= x.getTiempoDeResolucion();
-
         }
-
     }
 
     public void incidenteResuelto(String consideracion){
-
         this.setConsideracion(consideracion);
         this.setEstaResuelto(true);
     }
 
     public Cliente obtenerCliente(String razonSocial, String cuit){
-
 
         if (razonSocial.equals(cliente.getRazonSocial()) && cuit.equals(cliente.getCuit())){
 
