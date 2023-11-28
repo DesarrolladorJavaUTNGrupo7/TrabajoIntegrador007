@@ -75,9 +75,7 @@ public class Incidente {
         this.tiempoDeResolucionEspecifico = tiempoDeResolucionEspecifico;
     }
 
-    public Incidente() {
 
-    }
 
 
     public void agregarProblema(Problema problema){
@@ -110,7 +108,6 @@ public class Incidente {
 
     public Cliente obtenerCliente(String razonSocial, String cuit){
 
-        //TODO
 
         if (razonSocial.equals(cliente.getRazonSocial()) && cuit.equals(cliente.getCuit())){
 
