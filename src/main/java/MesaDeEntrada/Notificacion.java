@@ -26,12 +26,12 @@ public class Notificacion {
 
     @Override
     public String toString() {
-        return "Notificacion{" +
-                "titulo='" + titulo + '\'' +
-                ", cuerpo='" + cuerpo + '\'' +
-                ", incidente=" + incidente +
-                ", fueEnviado=" + fueEnviado +
-                ", fechaEnvioNotificacion=" + fechaEnvioNotificacion +
-                '}';
+        return "Notificacion{" + '\n' +
+                "titulo='" + titulo + '\'' + '\n' +
+                "cuerpo='" + cuerpo + '\'' + '\n' +
+                "incidente='" + incidente + '\'' + '\n' +
+                "fueEnviado='" + fueEnviado + '\'' + '\n' +
+                "fechaEnvioNotificacion='" + fechaEnvioNotificacion +
+                "'}";
     }
 }

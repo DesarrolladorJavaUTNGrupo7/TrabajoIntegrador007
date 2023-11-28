@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -52,16 +53,16 @@ public class Tecnico {
     @Column(name = "notificaciones")
     private List<Notificacion> notificaciones;
 
-    public Tecnico(String cuit, List<Especialidad> especialidades, MedioDeNotificacion medioDeNotificacionPreferido, String nombre, List<TiempoEstimadoPorTipoProblema> tiemposPersonalizados, String apellido, LocalDate fechaNacimiento, Boolean estaDisponible, List<Notificacion> notificaciones) {
+    public Tecnico(String cuit, List<Especialidad> especialidades, MedioDeNotificacion medioDeNotificacionPreferido, String nombre, String apellido, LocalDate fechaNacimiento, Boolean estaDisponible) {
         this.cuit = cuit;
         this.especialidades = especialidades;
         this.medioDeNotificacionPreferido = medioDeNotificacionPreferido;
         this.nombre = nombre;
-        this.tiemposPersonalizados = tiemposPersonalizados;
         this.apellido = apellido;
         this.fechaNacimiento = fechaNacimiento;
         this.estaDisponible = estaDisponible;
-        this.notificaciones = notificaciones;
+        this.notificaciones = new ArrayList<>();
+        this.tiemposPersonalizados = new ArrayList<>();
     }
 
 
