@@ -1,12 +1,15 @@
 package RRHH;
 
 import MesaDeEntrada.Notificacion;
+import MesaDeEntrada.TipoProblema;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 import static javax.persistence.GenerationType.SEQUENCE;
 
@@ -50,21 +53,35 @@ public class Tecnico {
     @Column(name = "notificaciones")
     private List<Notificacion> notificaciones;
 
-    public Tecnico(String cuit, List<Especialidad> especialidades, MedioDeNotificacion medioDeNotificacionPreferido, String nombre, List<TiempoEstimadoPorTipoProblema> tiemposPersonalizados, String apellido, LocalDate fechaNacimiento, Boolean estaDisponible) {
+    public Tecnico(String cuit, List<Especialidad> especialidades, MedioDeNotificacion medioDeNotificacionPreferido, String nombre, String apellido, LocalDate fechaNacimiento, Boolean estaDisponible) {
         this.cuit = cuit;
         this.especialidades = especialidades;
         this.medioDeNotificacionPreferido = medioDeNotificacionPreferido;
         this.nombre = nombre;
-        this.tiemposPersonalizados = tiemposPersonalizados;
         this.apellido = apellido;
         this.fechaNacimiento = fechaNacimiento;
         this.estaDisponible = estaDisponible;
-        this.notificaciones = notificaciones;
+        this.notificaciones = new ArrayList<>();
+        this.tiemposPersonalizados = new ArrayList<>();
     }
 
 
+
     public void agregarNotificacion(Notificacion notificacion){
-        //podria ponerse el parametro de medio de notificacion asi lo recibe con el mismo y lo agrega al array notificaciones
         notificaciones.add(notificacion);
+    }
+
+
+
+    public void agregarTiempoPersonalizado(TiempoEstimadoPorTipoProblema tiempoEstimadoPorTipoProblema) {
+        this.tiemposPersonalizados.add(tiempoEstimadoPorTipoProblema);
+
+    }
+
+    public Optional<Double> tieneTiempoPersonalizado(TipoProblema tipoProblema) {
+        return tiemposPersonalizados.stream()
+                .filter(tiempoEstimado -> tiempoEstimado.getTipoProblema().equals(tipoProblema))
+                .map(TiempoEstimadoPorTipoProblema::getTiempoEstimado)
+                .findFirst();
     }
 }
