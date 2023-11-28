@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 import static javax.persistence.GenerationType.SEQUENCE;
@@ -41,6 +42,8 @@ public class Cliente {
         this.cuit = cuit;
         this.razonSocial = razonSocial;
         this.medioNotificacion = medioNotificacion;
+        this.listaServicio = new ArrayList<>();
+        this.notificaciones = new ArrayList<>();
     }
 
     public void agregarServicio(Servicio servicio){
