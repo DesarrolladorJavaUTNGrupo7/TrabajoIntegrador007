@@ -18,9 +18,16 @@ public class MedioNotificacionDao {
 
     public void create(MedioDeNotificacion entity) {
         EntityTransaction tx = entityManager.getTransaction();
-        tx.begin();
-        entityManager.persist(entity);
-        tx.commit();
+        try {
+            tx.begin();
+            entityManager.persist(entity);
+            tx.commit();
+        } catch (Exception e) {
+            if (tx != null && tx.isActive()) {
+                tx.rollback();
+            }
+            throw e;
+        }
     }
 
     public MedioDeNotificacion update(MedioDeNotificacion entity) {

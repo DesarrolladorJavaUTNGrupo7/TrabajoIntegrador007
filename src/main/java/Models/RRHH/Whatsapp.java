@@ -1,7 +1,10 @@
 package Models.RRHH;
 
 import Models.MesaDeEntrada.Notificacion;
+import javax.persistence.*;
 
+@Entity
+@DiscriminatorValue("whatsapp")
 public class Whatsapp extends MedioDeNotificacion {
 
     public Whatsapp(String nombre, String medio) {

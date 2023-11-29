@@ -28,7 +28,7 @@ public class Cliente {
     private String razonSocial;
 
     @OneToOne
-    @JoinColumn(name = "medio_notificacion_id", referencedColumnName = "id_medio_de_notificacion")
+    @JoinColumn(name = "medio_notificacion")
     private MedioDeNotificacion medioNotificacion;
 
     @OneToMany(mappedBy = "cliente")
@@ -37,10 +37,10 @@ public class Cliente {
     @OneToMany(mappedBy = "cliente")
     private List<Notificacion> notificaciones;
 
-    public Cliente(String cuit, String razonSocial,MedioDeNotificacion medioNotificacion) {
+    public Cliente(String cuit, String razonSocial) {
         this.cuit = cuit;
         this.razonSocial = razonSocial;
-        this.medioNotificacion = medioNotificacion;
+//        this.medioNotificacion = medioNotificacion;
         this.listaServicio = new ArrayList<>();
         this.notificaciones = new ArrayList<>();
     }
@@ -57,5 +57,15 @@ public class Cliente {
     public void agregarMensajeYNotificar(Notificacion notificacion){
         this.notificaciones.add(notificacion);
         this.medioNotificacion.enviarNotificacion(notificacion);
+    }
+
+    @Override
+    public String toString() {
+        return "Cliente{" +
+                "id=" + id +
+                ", cuit='" + cuit + '\'' +
+                ", razonSocial='" + razonSocial + '\'' +
+                ", medioNotificacion=" + medioNotificacion +
+                '}';
     }
 }

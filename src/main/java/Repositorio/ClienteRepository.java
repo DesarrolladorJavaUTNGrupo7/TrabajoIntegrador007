@@ -9,7 +9,7 @@ public class ClienteRepository {
     private ClientsDao dao = new ClientsDao();
 
     public void create(Cliente unCliente){
-        if(validate(unCliente))
+//        if(validate(unCliente))
             dao.create(unCliente);
     }
 

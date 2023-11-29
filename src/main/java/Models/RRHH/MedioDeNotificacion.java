@@ -10,12 +10,13 @@ import static javax.persistence.GenerationType.SEQUENCE;
 
 @Entity
 @Table(name = "medio_de_notificacion")
+@Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @Getter @Setter
 public abstract class MedioDeNotificacion {
 
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name="id_medio_de_notificacion")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
     @Column(name="nombre")
@@ -36,9 +37,9 @@ public abstract class MedioDeNotificacion {
     @Override
     public String toString() {
         return "MedioDeNotificacion{" +
-                "id=" + id +
-                ", nombre='" + nombre + '\'' +
-                ", medio='" + medio + '\'' +
+                "id=" + this.id +
+                ", nombre='" + this.nombre + '\'' +
+                ", medio='" + this.medio + '\'' +
                 '}';
     }
 

@@ -2,10 +2,11 @@ package Models.RRHH;
 
 import Models.MesaDeEntrada.Notificacion;
 
+import javax.persistence.*;
+
+@Entity
+@DiscriminatorValue("mail")
 public class Mail extends MedioDeNotificacion{
-
-
-
 
     public Mail(String nombre, String medio) {
         super(nombre, medio);
