@@ -29,8 +29,8 @@ public class TipoProblema {
     @Column(name = "tiempo_de_resolucion_maximo")
     private Double tiempoDeResolucionMaximo;
 
-    /*@OneToMany
-    @JoinColumn(name = "especialidades", referencedColumnName = "id_especialidad")*/
+    @ManyToMany
+    @JoinColumn(name = "especialidades", referencedColumnName = "id_especialidad")
     private List<Especialidad> especialidades;
 
     public TipoProblema(String nombre, String descripcion, Double tiempoDeResolucionMaximo, List<Especialidad> especialidades) {

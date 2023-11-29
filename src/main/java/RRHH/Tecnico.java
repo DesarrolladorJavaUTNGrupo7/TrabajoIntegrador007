@@ -37,7 +37,8 @@ public class Tecnico {
     @Column(name = "nombre")
     private String nombre;
 
-    @Column(name = "tiempo_personalizado")
+    @OneToMany
+    @JoinColumn(name = "tiempo_personalizado")
     private List<TiempoEstimadoPorTipoProblema> tiemposPersonalizados;
 
     @Column(name = "apellido")
@@ -49,7 +50,8 @@ public class Tecnico {
     @Column(name = "esta_disponible")
     private Boolean estaDisponible;
 
-    @Column(name = "notificaciones")
+    @OneToMany
+    @JoinColumn(name = "notificaciones")
     private List<Notificacion> notificaciones;
 
     public Tecnico(String cuit, List<Especialidad> especialidades, MedioDeNotificacion medioDeNotificacionPreferido, String nombre, String apellido, LocalDate fechaNacimiento, Boolean estaDisponible) {
