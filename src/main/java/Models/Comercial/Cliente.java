@@ -1,7 +1,7 @@
-package Comercial;
+package Models.Comercial;
 
-import MesaDeEntrada.Notificacion;
-import RRHH.MedioDeNotificacion;
+import Models.MesaDeEntrada.Notificacion;
+import Models.RRHH.MedioDeNotificacion;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -31,11 +31,12 @@ public class Cliente {
     @JoinColumn(name = "medio_notificacion", referencedColumnName = "id_medio_de_notificacion")
     private MedioDeNotificacion medioNotificacion;
 
-   /* @OneToMany
-    @JoinColumn(name = "lista_servicio", referencedColumnName = "id_servicio") */
+    @OneToMany
+    @JoinColumn(name = "lista_servicio")
     private List<Servicio> listaServicio;
 
-    @Column(name = "notificaciones")
+    @OneToMany
+    @JoinColumn(name = "notificaciones")
     private List<Notificacion> notificaciones;
 
     public Cliente(String cuit, String razonSocial,MedioDeNotificacion medioNotificacion) {

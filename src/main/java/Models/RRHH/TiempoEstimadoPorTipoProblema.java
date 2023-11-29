@@ -1,6 +1,6 @@
-package RRHH;
+package Models.RRHH;
 
-import MesaDeEntrada.TipoProblema;
+import Models.MesaDeEntrada.TipoProblema;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -17,7 +17,7 @@ public class TiempoEstimadoPorTipoProblema {
     @GeneratedValue(strategy = SEQUENCE, generator = "ID_SEQ")
     private Integer id;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "tipo_problema", referencedColumnName = "id_tipo_problema")
     private TipoProblema tipoProblema;
 

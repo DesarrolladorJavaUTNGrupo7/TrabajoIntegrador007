@@ -1,6 +1,6 @@
-package MesaDeEntrada;
+package Models.MesaDeEntrada;
 
-import RRHH.Tecnico;
+import Models.RRHH.Tecnico;
 import lombok.Getter;
 import lombok.Setter;
 

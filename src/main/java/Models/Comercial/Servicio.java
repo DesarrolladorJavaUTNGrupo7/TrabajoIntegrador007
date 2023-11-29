@@ -1,6 +1,6 @@
-package Comercial;
+package Models.Comercial;
 
-import MesaDeEntrada.TipoProblema;
+import Models.MesaDeEntrada.TipoProblema;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -27,7 +27,8 @@ public class Servicio{
     @Column(name="descripcion")
     private String descripcion;
 
-    @Column(name = "tipo_problemas")
+    @ManyToMany
+    @JoinColumn(name = "tipo_problemas", referencedColumnName = "id_tipo_problema")
     private List<TipoProblema> tipoProblemas;
 
     public Servicio(String nombre, String descripcion) {

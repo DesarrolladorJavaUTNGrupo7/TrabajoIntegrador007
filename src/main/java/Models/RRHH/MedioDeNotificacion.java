@@ -1,6 +1,6 @@
-package RRHH;
+package Models.RRHH;
 
-import MesaDeEntrada.Notificacion;
+import Models.MesaDeEntrada.Notificacion;
 import lombok.Getter;
 import lombok.Setter;
 

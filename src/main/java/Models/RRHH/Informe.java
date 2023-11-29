@@ -1,8 +1,4 @@
-package RRHH;
-
-import MesaDeEntrada.Incidente;
-
-import java.util.ArrayList;
+package Models.RRHH;
 
 public class Informe {
     public static void obtenerInformeDiarioPorTecnico(){

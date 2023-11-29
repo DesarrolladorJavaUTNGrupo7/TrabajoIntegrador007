@@ -1,6 +1,6 @@
-package MesaDeEntrada;
+package Models.MesaDeEntrada;
 
-import RRHH.Especialidad;
+import Models.RRHH.Especialidad;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -30,7 +30,7 @@ public class TipoProblema {
     private Double tiempoDeResolucionMaximo;
 
     @OneToMany
-    @JoinColumn(name = "especialidades", referencedColumnName = "id_especialidad")
+    @JoinColumn(name = "especialidades")
     private List<Especialidad> especialidades;
 
     public TipoProblema(String nombre, String descripcion, Double tiempoDeResolucionMaximo, List<Especialidad> especialidades) {

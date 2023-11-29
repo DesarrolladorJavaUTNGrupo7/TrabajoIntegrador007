@@ -1,7 +1,7 @@
-package RRHH;
+package Models.RRHH;
 
-import MesaDeEntrada.Notificacion;
-import MesaDeEntrada.TipoProblema;
+import Models.MesaDeEntrada.Notificacion;
+import Models.MesaDeEntrada.TipoProblema;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -27,7 +27,8 @@ public class Tecnico {
     @Column(name = "cuit")
     private String cuit;
 
-    @OneToMany(mappedBy = "tecnico")
+    @ManyToMany
+    @JoinTable(name = "especialidad_tecnico", joinColumns = @JoinColumn(name = "id_tecnico"), inverseJoinColumns = @JoinColumn(name = "id_especialidad"))
     private List<Especialidad> especialidades;
 
     @ManyToOne
@@ -37,7 +38,8 @@ public class Tecnico {
     @Column(name = "nombre")
     private String nombre;
 
-    @Column(name = "tiempo_personalizado")
+    @OneToMany
+    @JoinColumn(name = "tiempo_personalizado")
     private List<TiempoEstimadoPorTipoProblema> tiemposPersonalizados;
 
     @Column(name = "apellido")
@@ -49,7 +51,8 @@ public class Tecnico {
     @Column(name = "esta_disponible")
     private Boolean estaDisponible;
 
-    @Column(name = "notificaciones")
+    @OneToMany
+    @JoinColumn(name = "notificaciones")
     private List<Notificacion> notificaciones;
 
     public Tecnico(String cuit, List<Especialidad> especialidades, MedioDeNotificacion medioDeNotificacionPreferido, String nombre, String apellido, LocalDate fechaNacimiento, Boolean estaDisponible) {
