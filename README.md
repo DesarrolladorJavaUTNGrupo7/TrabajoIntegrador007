@@ -18,7 +18,7 @@ Este proyecto es parte del Trabajo Práctico Integrador para el curso de Desarro
 
 ## Ciclo de Vida de un Incidente
 
-Cuando un cliente reporta un incidente, la mesa de ayuda ingresa los detalles en el sistema. El sistema asigna un técnico disponible y estima el tiempo de resolución. Una vez resuelto, se notifica al cliente y se genera un informe para RRHH.
+Cuando un cliente reporta un incidente, la mesa de ayuda ingresa los detalles en el sistema. El sistema asigna un técnico disponible y estima el tiempo de resolución. Una vez resuelto, se notifica al cliente y se genera un informe para Models.RRHH.
 
 
 ## Otras Características Destacadas
@@ -44,7 +44,7 @@ El trabajo se ha dividido en tres entregas, cada una enfocada en aspectos espec�
 ### Entrega 2
 
 - Modelado de clases con mapeo (anotaciones JPA) de entidades para persistir en una Base de Datos Relacional.
-- Repositorios/Servicios para requerimientos específicos.
+- Repositorios/Services para requerimientos específicos.
 
 ### Entrega 3
 
@@ -81,7 +81,7 @@ Este proyecto es un esfuerzo colaborativo del Grupo 7 de la Comisión 008 de est
 
 ### - Codigo de Modelado de Clases (UML):
 
-![Modelo UML](https://github.com/DesarrolladorJavaUTNGrupo7/TrabajoIntegrador007/blob/main/Diagramas/Diagrama%20de%20Clases.png)
+![Modelo UML](https://github.com/DesarrolladorJavaUTNGrupo7/TrabajoIntegrador007/blob/main/Diagramas/diagrama%20de%20clases.jpg?raw=true)
 
 
 ---
