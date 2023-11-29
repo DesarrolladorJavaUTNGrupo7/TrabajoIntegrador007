@@ -29,19 +29,11 @@ public class Problema {
     @Column(name = "es_complejo")
     private Boolean esComplejo;
 
-    @ManyToOne
-    @JoinColumn(name = "incidente_id", referencedColumnName = "id_incidente")
-    private Incidente incidente;
-
     @Column(name = "colchon_horas")
     private Double colchonHoras;
 
     @Column(name = "tiempo_de_resolucion")
     private Double tiempoDeResolucion;
-
-    public Problema(Incidente incidente) {
-        this.incidente = incidente;
-    }
 
     public Problema(String descripcion, Boolean esComplejo, TipoProblema tipo, Double colchonHoras) {
         this.descripcion = descripcion;

@@ -19,7 +19,8 @@ public class ProvisionServicio {
     @GeneratedValue(strategy=SEQUENCE, generator="ID_SEQ")
     private Integer id;
 
-    @ManyToOne
+    @OneToOne
+    @JoinColumn(name = "cliente", referencedColumnName = "id_cliente")
     private Cliente cliente;
 
     @OneToOne

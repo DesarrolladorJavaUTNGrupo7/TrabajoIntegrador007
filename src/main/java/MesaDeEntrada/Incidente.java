@@ -54,7 +54,8 @@ public class Incidente {
     @JoinColumn(name = "servicio", referencedColumnName = "id_servicio")
     private Servicio servicio;
 
-    @OneToMany(mappedBy = "incidente", cascade = CascadeType.ALL)
+    @OneToMany
+    @JoinColumn(name = "problemas")
     private List<Problema> problemas;
 
     @Column(name="tiempo_de_resolucion_especifico")

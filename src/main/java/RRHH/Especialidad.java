@@ -22,10 +22,6 @@ public class Especialidad {
     @Column(name = "descripcion")
     private String descripcion;
 
-    @ManyToOne
-    @JoinColumn(name = "tecnico_id", referencedColumnName = "id_tecnico")
-    private Tecnico tecnico;
-
     public Especialidad(String nombre, String descripcion) {
         this.nombre = nombre;
         this.descripcion = descripcion;

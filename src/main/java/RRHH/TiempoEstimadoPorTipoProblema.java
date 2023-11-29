@@ -17,7 +17,7 @@ public class TiempoEstimadoPorTipoProblema {
     @GeneratedValue(strategy = SEQUENCE, generator = "ID_SEQ")
     private Integer id;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "tipo_problema", referencedColumnName = "id_tipo_problema")
     private TipoProblema tipoProblema;
 

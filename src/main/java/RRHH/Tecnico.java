@@ -27,7 +27,8 @@ public class Tecnico {
     @Column(name = "cuit")
     private String cuit;
 
-    @OneToMany(mappedBy = "tecnico")
+    @ManyToMany
+    @JoinTable(name = "especialidad_tecnico", joinColumns = @JoinColumn(name = "id_tecnico"), inverseJoinColumns = @JoinColumn(name = "id_especialidad"))
     private List<Especialidad> especialidades;
 
     @ManyToOne
