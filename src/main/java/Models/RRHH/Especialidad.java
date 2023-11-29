@@ -1,4 +1,4 @@
-package RRHH;
+package Models.RRHH;
 
 import lombok.Getter;
 import lombok.Setter;

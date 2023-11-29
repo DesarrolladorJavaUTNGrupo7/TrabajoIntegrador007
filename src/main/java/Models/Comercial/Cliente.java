@@ -1,7 +1,7 @@
-package Comercial;
+package Models.Comercial;
 
-import MesaDeEntrada.Notificacion;
-import RRHH.MedioDeNotificacion;
+import Models.MesaDeEntrada.Notificacion;
+import Models.RRHH.MedioDeNotificacion;
 import lombok.Getter;
 import lombok.Setter;
 

@@ -1,6 +1,5 @@
-package MesaDeEntrada;
+package Models.MesaDeEntrada;
 
-import Comercial.Cliente;
 import lombok.Getter;
 import lombok.Setter;
 

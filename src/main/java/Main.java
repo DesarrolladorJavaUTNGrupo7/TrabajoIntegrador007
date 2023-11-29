@@ -1,19 +1,5 @@
-import Comercial.Cliente;
-import Comercial.Servicio;
-import MesaDeEntrada.Incidente;
-import MesaDeEntrada.Notificacion;
-import MesaDeEntrada.Problema;
-import MesaDeEntrada.TipoProblema;
-import RRHH.*;
-
-import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import java.sql.Date;
-import java.time.LocalDate;
-import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Main {
     public static void main(String[] args) {

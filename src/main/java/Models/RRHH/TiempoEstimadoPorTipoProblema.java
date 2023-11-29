@@ -1,6 +1,6 @@
-package RRHH;
+package Models.RRHH;
 
-import MesaDeEntrada.TipoProblema;
+import Models.MesaDeEntrada.TipoProblema;
 import lombok.Getter;
 import lombok.Setter;
 

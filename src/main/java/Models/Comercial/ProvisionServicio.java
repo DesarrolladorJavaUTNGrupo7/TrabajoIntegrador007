@@ -1,4 +1,4 @@
-package Comercial;
+package Models.Comercial;
 
 import lombok.Getter;
 import lombok.Setter;

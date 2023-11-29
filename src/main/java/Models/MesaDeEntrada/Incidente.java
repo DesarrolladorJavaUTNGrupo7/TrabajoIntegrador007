@@ -1,17 +1,14 @@
-package MesaDeEntrada;
+package Models.MesaDeEntrada;
 
-import Comercial.Cliente;
-import Comercial.Servicio;
-import RRHH.MedioDeNotificacion;
-import RRHH.Tecnico;
+import Models.Comercial.Cliente;
+import Models.Comercial.Servicio;
+import Models.RRHH.Tecnico;
 import lombok.Getter;
 import lombok.Setter;
 
 import javax.persistence.*;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
 
 import static javax.persistence.GenerationType.SEQUENCE;

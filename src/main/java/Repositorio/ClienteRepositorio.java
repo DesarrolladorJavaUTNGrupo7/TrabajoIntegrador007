@@ -1,6 +1,6 @@
 package Repositorio;
 
-import Comercial.Cliente;
+import Models.Comercial.Cliente;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
