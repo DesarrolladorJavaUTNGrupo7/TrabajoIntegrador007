@@ -12,7 +12,6 @@ Este proyecto es parte del Trabajo Práctico Integrador para el curso de Desarro
 - **Franco Andres Libertini**
 - **Luis Marcelo Lopez Lozada**
 - **Martin Nicolas Mora Carvallo**
-- **Samir Yordano Cristobal Moreno**
 - **Cecilia Lourdes Villafañe**
 
 
