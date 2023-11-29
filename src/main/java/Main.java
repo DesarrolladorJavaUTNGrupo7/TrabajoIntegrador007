@@ -19,7 +19,7 @@ public class Main {
     public static void main(String[] args) {
 
 
-        List<Especialidad> listaEspecialidades = new ArrayList<>();
+        /*List<Especialidad> listaEspecialidades = new ArrayList<>();
         Especialidad EspecialidadAplicaciones = new Especialidad("Aplicacones","especialista en aplicaciones");
         listaEspecialidades.add(EspecialidadAplicaciones);
 
@@ -54,10 +54,10 @@ public class Main {
 
         tecnico.agregarNotificacion(notificaion1);
 
-        System.out.println(tecnico.getNotificaciones().get(0).toString());
+        System.out.println(tecnico.getNotificaciones().get(0).toString());*/
 
         EntityManagerFactory emf = Persistence.createEntityManagerFactory("JPA_PU");
-        EntityManager em = emf.createEntityManager();
+//        EntityManager em = emf.createEntityManager();
 
 /*// Ejemplo de guardar un objeto en la base de datos
 
