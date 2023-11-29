@@ -1,3 +1,6 @@
+import Controller.ControllerInicializar;
+
+import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
@@ -42,8 +45,12 @@ public class Main {
 
         System.out.println(tecnico.getNotificaciones().get(0).toString());*/
 
-        EntityManagerFactory emf = Persistence.createEntityManagerFactory("JPA_PU");
-//        EntityManager em = emf.createEntityManager();
+        ControllerInicializar.inicializar();
+
+        // Realizar operaciones de persistencia con el EntityManager
+
+
+
 
 /*// Ejemplo de guardar un objeto en la base de datos
 

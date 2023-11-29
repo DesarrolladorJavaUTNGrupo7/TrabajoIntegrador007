@@ -5,6 +5,8 @@ import Models.MesaDeEntrada.Notificacion;
 public class Mail extends MedioDeNotificacion{
 
 
+
+
     public Mail(String nombre, String medio) {
         super(nombre, medio);
     }

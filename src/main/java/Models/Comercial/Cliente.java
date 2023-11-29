@@ -18,8 +18,8 @@ public class Cliente {
 
     @Id
     @Column(name="id_cliente")
-    @GeneratedValue(strategy=SEQUENCE, generator="ID_SEQ")
-    private Integer id;
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    private int id;
 
     @Column(name="cuit")
     private String cuit;
@@ -28,15 +28,13 @@ public class Cliente {
     private String razonSocial;
 
     @OneToOne
-    @JoinColumn(name = "medio_notificacion", referencedColumnName = "id_medio_de_notificacion")
+    @JoinColumn(name = "medio_notificacion_id", referencedColumnName = "id_medio_de_notificacion")
     private MedioDeNotificacion medioNotificacion;
 
-    @OneToMany
-    @JoinColumn(name = "lista_servicio")
+    @OneToMany(mappedBy = "cliente")
     private List<Servicio> listaServicio;
 
-    @OneToMany
-    @JoinColumn(name = "notificaciones")
+    @OneToMany(mappedBy = "cliente")
     private List<Notificacion> notificaciones;
 
     public Cliente(String cuit, String razonSocial,MedioDeNotificacion medioNotificacion) {
@@ -46,6 +44,11 @@ public class Cliente {
         this.listaServicio = new ArrayList<>();
         this.notificaciones = new ArrayList<>();
     }
+
+    public Cliente() {
+
+    }
+
 
     public void agregarServicio(Servicio servicio){
         this.listaServicio.add(servicio);

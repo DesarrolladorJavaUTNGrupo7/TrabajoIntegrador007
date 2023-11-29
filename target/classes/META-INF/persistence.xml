@@ -8,29 +8,28 @@
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
 
         <!-- Clases de entidad -->
-        <class>Comercial.Cliente</class>
-        <class>MesaDeEntrada.Problema</class>
-        <class>Comercial.ProvisionServicio</class>
-        <class>Comercial.Servicio</class>
-        <class>MesaDeEntrada.Incidente</class>
-        <class>MesaDeEntrada.Notificacion</class>
-        <class>MesaDeEntrada.TipoProblema</class>
-        <class>RRHH.Especialidad</class>
-        <class>RRHH.Informe</class>
-        <class>RRHH.MedioDeNotificacion</class>
-        <class>RRHH.Tecnico</class>
-        <class>RRHH.TiempoEstimadoPorTipoProblema</class>
+        <class>Models.Comercial.Cliente</class>
+        <class>Models.MesaDeEntrada.Problema</class>
+        <class>Models.Comercial.ProvisionServicio</class>
+        <class>Models.Comercial.Servicio</class>
+        <class>Models.MesaDeEntrada.Incidente</class>
+        <class>Models.MesaDeEntrada.Notificacion</class>
+        <class>Models.MesaDeEntrada.TipoProblema</class>
+        <class>Models.RRHH.Especialidad</class>
+        <class>Models.RRHH.Informe</class>
+        <class>Models.RRHH.MedioDeNotificacion</class>
+        <class>Models.RRHH.Tecnico</class>
+        <class>Models.RRHH.TiempoEstimadoPorTipoProblema</class>
 
         <properties>
             <!-- Propiedades de configuración de Hibernate -->
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect"/>
             <property name="hibernate.connection.driver_class" value="com.mysql.cj.jdbc.Driver"/>
-            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/tp_java_utn?characterEncoding=utf8"/> <!--jdbc:mysql://localhost:3306/TestBackendUTN?characterEncoding=utf8-->
+            <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/pruebajpa?characterEncoding=utf8"/> <!--jdbc:mysql://localhost:3306/TestBackendUTN?characterEncoding=utf8-->
             <property name="hibernate.connection.username" value="root"/>
-            <property name="hibernate.connection.password" value=""/>
+            <property name="hibernate.connection.password" value="Narutosasuke12"/>
             <property name="hibernate.hbm2ddl.auto" value="create-drop"/>
-            <property name="hibernate.show_sql" value="true"/>
-            <property name="hibernate.format_sql" value="true"/>
+
         </properties>
     </persistence-unit>
 </persistence>

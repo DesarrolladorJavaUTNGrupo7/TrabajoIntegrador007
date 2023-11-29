@@ -14,8 +14,8 @@ import static javax.persistence.GenerationType.SEQUENCE;
 public abstract class MedioDeNotificacion {
 
     @Id
+    @GeneratedValue(strategy=GenerationType.IDENTITY)
     @Column(name="id_medio_de_notificacion")
-    @GeneratedValue(strategy=SEQUENCE, generator="ID_SEQ")
     private int id;
 
     @Column(name="nombre")
@@ -29,5 +29,22 @@ public abstract class MedioDeNotificacion {
         this.medio = medio;
     }
 
+    public MedioDeNotificacion() {
+
+    }
+
+    @Override
+    public String toString() {
+        return "MedioDeNotificacion{" +
+                "id=" + id +
+                ", nombre='" + nombre + '\'' +
+                ", medio='" + medio + '\'' +
+                '}';
+    }
+
     public abstract void enviarNotificacion(Notificacion notificacion);
+
+
 }
+
+

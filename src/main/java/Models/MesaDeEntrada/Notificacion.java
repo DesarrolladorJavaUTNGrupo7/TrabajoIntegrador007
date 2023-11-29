@@ -1,5 +1,6 @@
 package Models.MesaDeEntrada;
 
+import Models.Comercial.Cliente;
 import lombok.Getter;
 import lombok.Setter;
 
@@ -34,6 +35,10 @@ public class Notificacion {
     @Column(name = "fecha_envio_notificacion")
     private LocalDate fechaEnvioNotificacion;
 
+    @ManyToOne
+    @JoinColumn(name = "id_cliente")
+    private Cliente cliente;
+
     public Notificacion(String titulo, String cuerpo, Incidente incidente) {
         this.titulo = titulo;
         this.cuerpo = cuerpo;
@@ -42,6 +47,9 @@ public class Notificacion {
         //this.fechaEnvioNotificacion = fechaEnvioNotificacion;
     }
 
+    public Notificacion() {
+
+    }
 
 
     @Override

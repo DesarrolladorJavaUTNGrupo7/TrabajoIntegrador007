@@ -26,4 +26,8 @@ public class Especialidad {
         this.nombre = nombre;
         this.descripcion = descripcion;
     }
+
+    public Especialidad() {
+
+    }
 }
