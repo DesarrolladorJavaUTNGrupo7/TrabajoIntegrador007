@@ -18,9 +18,16 @@ public class ClientsDao {
 
     public void create(Cliente entity) {
         EntityTransaction tx = entityManager.getTransaction();
-        tx.begin();
-        entityManager.persist(entity);
-        tx.commit();
+        try {
+            tx.begin();
+            entityManager.persist(entity);
+            tx.commit();
+        } catch (Exception e) {
+            if (tx != null && tx.isActive()) {
+                tx.rollback();
+            }
+            throw e;
+        }
     }
 
     public Cliente update(Cliente entity) {

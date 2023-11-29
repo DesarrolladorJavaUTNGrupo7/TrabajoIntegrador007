@@ -1,4 +1,6 @@
+import Controller.ControllerCliente;
 import Controller.ControllerInicializar;
+import Models.RRHH.MedioDeNotificacion;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
@@ -45,7 +47,11 @@ public class Main {
 
         System.out.println(tecnico.getNotificaciones().get(0).toString());*/
 
-        ControllerInicializar.inicializar();
+        MedioDeNotificacion medioNuevo = ControllerInicializar.inicializar();
+
+        ControllerCliente.inicializar(medioNuevo);
+
+
 
         // Realizar operaciones de persistencia con el EntityManager
 

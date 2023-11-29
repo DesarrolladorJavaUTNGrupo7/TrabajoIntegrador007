@@ -9,8 +9,9 @@ public class ClienteRepository {
     private ClientsDao dao = new ClientsDao();
 
     public void create(Cliente unCliente){
-//        if(validate(unCliente))
+        if(validate(unCliente)) {
             dao.create(unCliente);
+        }
     }
 
     private boolean validate(Cliente unCliente) {
@@ -26,5 +27,6 @@ public class ClienteRepository {
     }
 
     public void closeEntityManager() {
+        dao.closeEntityManager();
     }
 }
