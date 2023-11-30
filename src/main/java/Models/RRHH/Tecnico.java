@@ -67,6 +67,9 @@ public class Tecnico {
         this.tiemposPersonalizados = new ArrayList<>();
     }
 
+    public Tecnico() {
+
+    }
 
 
     public void agregarNotificacion(Notificacion notificacion){

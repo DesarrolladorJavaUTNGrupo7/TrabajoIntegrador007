@@ -70,6 +70,10 @@ public class Incidente {
         this.problemas = new ArrayList<>();
     }
 
+    public Incidente() {
+
+    }
+
 
     public void agregarProblema(Problema problema){
         problemas.add(problema);

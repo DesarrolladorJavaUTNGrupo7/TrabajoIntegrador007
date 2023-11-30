@@ -40,6 +40,10 @@ public class TipoProblema {
         this.especialidades = new ArrayList<>();
     }
 
+    public TipoProblema() {
+
+    }
+
     public void agregarEspecialidad(Especialidad especialidad){
         this.especialidades.add(especialidad);
     }

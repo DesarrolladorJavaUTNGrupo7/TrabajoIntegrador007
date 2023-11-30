@@ -14,22 +14,30 @@ import static javax.persistence.GenerationType.SEQUENCE;
 @Entity
 @Table(name = "servicio")
 @Getter @Setter
-public class Servicio{
+public class Servicio {
 
     @Id
-    @Column(name="id_servicio")
-    @GeneratedValue(strategy=SEQUENCE, generator="ID_SEQ")
+    @Column(name = "id_servicio")
+    @GeneratedValue(strategy = SEQUENCE, generator = "ID_SEQ")
     private Integer id;
 
-    @Column(name="nombre")
+    @Column(name = "nombre")
     private String nombre;
 
-    @Column(name="descripcion")
+    @Column(name = "descripcion")
     private String descripcion;
 
     @ManyToMany
-    @JoinColumn(name = "tipo_problemas", referencedColumnName = "id_tipo_problema")
+    @JoinTable(
+            name = "servicio_tipo_problema",
+            joinColumns = @JoinColumn(name = "id_servicio"),
+            inverseJoinColumns = @JoinColumn(name = "id_tipo_problema")
+    )
     private List<TipoProblema> tipoProblemas;
+
+    @ManyToOne
+    @JoinColumn(name = "id_cliente")
+    private Cliente cliente;
 
     public Servicio(String nombre, String descripcion) {
         this.nombre = nombre;
@@ -37,7 +45,12 @@ public class Servicio{
         this.tipoProblemas = new ArrayList<>();
     }
 
-    public void agregarTipoProblema(TipoProblema tipoProblema){
+    public Servicio() {
+
+    }
+
+    public void agregarTipoProblema(TipoProblema tipoProblema) {
         this.tipoProblemas.add(tipoProblema);
     }
 }
+

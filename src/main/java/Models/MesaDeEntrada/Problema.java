@@ -42,6 +42,10 @@ public class Problema {
         this.setColchonHoras(colchonHoras);
     }
 
+    public Problema() {
+
+    }
+
     private void setTiempoDeResolucion(Tecnico tecnico) {
         Optional<Double> aux = tecnico.tieneTiempoPersonalizado(this.tipo);
 
